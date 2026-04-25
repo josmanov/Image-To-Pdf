@@ -1,0 +1,14 @@
+altgraph==0.17.5
+charset-normalizer==3.4.7
+iniconfig==2.3.0
+packaging==26.2
+pillow==12.2.0
+pluggy==1.6.0
+Pygments==2.20.0
+pyinstaller==6.20.0
+pyinstaller-hooks-contrib==2026.4
+pytesseract==0.3.13
+pytest==9.0.3
+reportlab==4.4.10
+ruff==0.15.12
+setuptools==82.0.1
