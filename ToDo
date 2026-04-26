@@ -1,11 +1,19 @@
 
-[] create a gui that searches for images upon button press
+[x] create a gui that searches for images upon button press
     [x] create a gui with a text and button
         [x] add welcome text
         [x] main text will be "Select image to use"
         [x] button text will be "Select" 
-    [] make button open file explorer for user to add image
-        [] search from current folder
+    [x] make button open file explorer for user to add image
+        [x] search from current folder
             * search only with image extensions i.e .png, .jpg. etc
-        [] open file_explorer
-        [] print the image path added in a new gui window, for now 
+        [x] open file_explorer
+        [x] print the image path added in a new gui window, for now 
+
+        [x] filter search for only images
+        [] add "Image selected" status on gui upon selecting image
+
+[] extract all texts from image
+    [] use ocr to test a simple text extraction from an image
+        [] store string extracted from image
+        [] print string into terminal
