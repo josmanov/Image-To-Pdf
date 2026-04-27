@@ -1,10 +1,11 @@
 
+CODE:
 [x] refactor code into cleaner structure
 [x] create a file to store constants and variables in for easier configuration and expansion
     [x] create constants and status files
     [x] update gui.py with new variables from constants..py & status.py files
 
-
+GUI:
 [x] create a gui that searches for images upon button press
     [x] create a gui with a text and button
         [x] add welcome text
@@ -21,7 +22,10 @@
         [x] make window start centered
         [x] add seperate colors for file selection status
 
+OCR (TEXT FROM IMAGE EXTRACTOR):
 [] extract all text from image
-    [] use ocr to test a simple text extraction from an image
-        [] store string extracted from image
-        [] print string into terminal
+    [x] use ocr to test a simple text extraction from an image
+        [x] store string extracted from image
+        [x] print string into terminal
+    [] test with large amounts of texts within a single image
+    [] create a loop to test all files within the tests/images folder
