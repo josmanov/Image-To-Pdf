@@ -6,11 +6,11 @@ from reportlab.pdfgen import canvas
 def prepare_word_boxes(image_path: str, words: list[dict],
                        min_conf: int = 0, font_scale: float = 0.8) -> list[dict]:
     with Image.open(image_path) as img:
-        img_w, img_h = img.size
+        img_h = img.size[1]
 
     out = []
     for w in words:
-        if w.get("confidence, 0") < min_conf:
+        if w.get("confidence", 0) < min_conf:
             continue
         x, y, width, height = w["x"], w["y"], w["width"], w["height"]
         pdf_x = x
@@ -29,7 +29,14 @@ def prepare_word_boxes(image_path: str, words: list[dict],
     
 
 def draw_words(pdf: canvas.Canvas, processed_words: list[dict]) -> None:
-    pass
+    for p in processed_words:
+        pdf.setFont("Helvetica", p["font_size"])
+        pdf.setStrokeColorRGB(1, 0, 0)
+        pdf.rect(p["pdf_x"], p["pdf_y"], p["width"], p["height"], stroke=1, fill=0)
+        pdf.setFillColorRGB(0, 0, 0)
+        pdf.drawString(p["pdf_x"], p["pdf_y"], p["text"])
+        pdf.setFillColorRGB(0, 0, 0)
+        pdf.setStrokeColorRGB(0, 0, 0)
 
 def image_to_pdf(image_path: str, words: list[dict] | None = None, output_path: str | None = None) -> str:
     image_file = Path(image_path)
