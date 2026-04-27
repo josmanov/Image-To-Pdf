@@ -1,10 +1,12 @@
 from pathlib import Path
 
+from src.ocr import extract_text_data
 from src.pdf_writer import image_to_pdf
 
-def test_iamge_to_pdf():
+def test_image_to_pdf():
     image_path = "tests/images/letter.webp"
     output_path = "tests/output/letter_out.pdf"
-
-    result = image_to_pdf(image_path, output_path)
+    
+    words = extract_text_data(image_path)
+    result = image_to_pdf(image_path, words, output_path)
     assert Path(result).exists()

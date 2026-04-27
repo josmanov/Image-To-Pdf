@@ -46,4 +46,6 @@ IMAGE TO PDF:
     [x] convert image pixel coords into pdf coords
     [x] estimate font size from text box height
     [x] draw prepared wordboxes on top of image layer
-    [] test new image and text drawing
+    [x] test new image and text drawing
+    [] use clear high resolution image for better testing
+    [] check examples of different sizes and bluriness to view resemblence
