@@ -29,9 +29,9 @@ OCR (TEXT FROM IMAGE EXTRACTOR):
         [x] print string into terminal
     [x] test with large amounts of texts within a single image
     [x] create a loop to test all files within the tests/images folder
-    [] change ocr output from plain text to word boxes
-    [] get position data from detected words
-    [] print position data from detected words
+    [x] change ocr output from plain text to word boxes
+    [x] get position data from detected words
+    [] test and print position data from detected words
 
 PDF write module:
 [x] create a pdf that contains selected image only
