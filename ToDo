@@ -49,4 +49,5 @@ IMAGE TO PDF:
     [x] test new image and text drawing
     [x] use clear high resolution image for better testing
     [] check examples of different sizes and bluriness to view resemblence
-    [] fix incorrect font sizing
+    [x] fix incorrect font sizing
+    [] fix inconsistent box sizes. 

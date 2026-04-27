@@ -4,7 +4,7 @@ from PIL import Image
 from reportlab.pdfgen import canvas
 
 def prepare_word_boxes(image_path: str, words: list[dict],
-                       min_conf: int = 0, font_scale: float = 0.8) -> list[dict]:
+                       min_conf: int = 0, font_scale: float = 1.1) -> list[dict]:
     with Image.open(image_path) as img:
         img_h = img.size[1]
 
@@ -15,7 +15,9 @@ def prepare_word_boxes(image_path: str, words: list[dict],
         x, y, width, height = w["x"], w["y"], w["width"], w["height"]
         pdf_x = x
         pdf_y = img_h - (y + height)
-        font_size = max(1, int(height * font_scale))
+        all_heights = [w["height"] for w in words]
+        avg_height = sum(all_heights) / len(all_heights) if all_heights else 1
+        font_size = max(1, int(avg_height * font_scale))
         out.append({
             "text": w["text"],
             "pdf_x": pdf_x,
