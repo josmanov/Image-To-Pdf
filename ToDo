@@ -29,12 +29,15 @@ OCR (TEXT FROM IMAGE EXTRACTOR):
         [x] print string into terminal
     [x] test with large amounts of texts within a single image
     [x] create a loop to test all files within the tests/images folder
+    [] change ocr output from plain text to word boxes
+    [] get position data from detected words
+    [] print position data from detected words
 
 PDF write module:
-[] create a pdf that contains selected image only
+[x] create a pdf that contains selected image only
     [x] take image path and add .pdf suffix into variable
     [x] get image size
     [x] create pdf canvas using size
     [x] place image onto pdf add a second page 
     [x] save created pdf
-    [] test image to see resemblance of image and pdf file
+    [x] test image to see resemblance of image and pdf file
