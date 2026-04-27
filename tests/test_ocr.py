@@ -1,5 +1,5 @@
 from pathlib import Path
-from src.ocr import extract_text
+from src.ocr import extract_text_data
 
 def test_ocr():
     images_dir = Path("tests/images")
@@ -7,5 +7,5 @@ def test_ocr():
     for image_path in images_dir.iterdir():
         if image_path.is_file():
             print(f"\nTesting: {image_path.name}")
-            text = extract_text(str(image_path))
-            print(text)
+            words = extract_text_data(str(image_path))
+            print(words)

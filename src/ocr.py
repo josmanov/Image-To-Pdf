@@ -10,7 +10,8 @@ def extract_text_data(image_path: str) -> str:
         parts = line.split('\t')
         if len(parts) == 12:
             level = int(parts[0])
-            x, y, width, height, conf = map(int, parts[6:11])
+            x, y, width, height,= map(int, parts[6:10])
+            conf = int(float(parts[10]))
             text = parts[11]
 
             if level == 5 and text.strip():
