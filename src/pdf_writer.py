@@ -16,4 +16,17 @@ def image_to_pdf(image_path: str, output_path: str | None = None) -> str:
     print(output_file)
     with Image.open(image_file) as img:
         width_px, height_px = img.size
-    canvas.Canvas(str(output_file), pagesize=(width_px, height_px))
+    pdf = canvas.Canvas(str(output_file), pagesize=(width_px, height_px))
+    pdf.drawImage(
+        str(image_file),
+        0,
+        0,
+        width=width_px,
+        height=height_px,
+        preserveAspectRatio=True,
+        mask="auto",
+    )
+    pdf.showPage()
+    pdf.save()
+
+    return str(output_file)

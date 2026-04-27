@@ -35,4 +35,6 @@ PDF write module:
     [x] take image path and add .pdf suffix into variable
     [x] get image size
     [x] create pdf canvas using size
-    [] save created pdf
+    [x] place image onto pdf add a second page 
+    [x] save created pdf
+    [] test image to see resemblance of image and pdf file
