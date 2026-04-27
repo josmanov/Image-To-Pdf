@@ -2,6 +2,10 @@ import tkinter as tk
 from tkinter.filedialog import askopenfilename
 from pathlib import Path
 
+import constants as consts
+from status import Status, ErrorStatus
+
+
 def run_app():
     window = tk.Tk()
     window.title("Image To Searchable PDF")
