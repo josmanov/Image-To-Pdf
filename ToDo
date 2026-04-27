@@ -18,7 +18,7 @@
 
         [x] filter search for only images
         [x] add "Image selected" status on gui upon selecting image
-        [] make window start centered
+        [x] make window start centered
         [x] add seperate colors for file selection status
 
 [] extract all text from image

@@ -9,10 +9,16 @@ from status import Status, ErrorStatus
 def run_app():
     window = tk.Tk()
     window.title(consts.APP_TITLE)
-    window.geometry(consts.WINDOW_GEOMETRY)
+
+    screen_w = window.winfo_screenwidth()
+    screen_h = window.winfo_screenheight()
+    width = consts.WINDOW_WIDTH
+    height = consts.WINDOW_HEIGHT
+    x = (screen_w - width) // 2
+    y = (screen_h - height) // 2
+    window.geometry(f"{width}x{height}+{x}+{y}")
 
     selected_path = tk.StringVar(value=ErrorStatus.NO_FILE.value)
-
     status = tk.StringVar(value=Status.READY.value)
     status_color = "gray"
 

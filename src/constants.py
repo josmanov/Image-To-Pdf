@@ -1,9 +1,12 @@
 APP_TITLE = "image To Searcable PDF"
-WINDOW_GEOMETRY = "500x300"
+WINDOW_WIDTH = 500
+WINDOW_HEIGHT = 300
 
 TEXT_WELCOME = "Welcome To Image To Pdf"
 TEXT_HELP = "Press the select button to add an image"
 TEXT_SELECT_BUTTON = "Select"
 
 IMAGE_EXTS = {".png", ".jpg", ".jpeg", ".bmp", ".gif" ".tiff"}
-FILE_DIALOG_FILTERS = [("Image files", "*.png *.jpg *.jpeg *.bmp *.gif *.tiff" )]
+FILE_DIALOG_FILTERS = [
+    ("Image files", "*.png *.jpg *.jpeg *.bmp *.gif *.tiff" )
+]
