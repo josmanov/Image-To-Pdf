@@ -1,9 +1,11 @@
+from pathlib import Path
 from src.ocr import extract_text
 
 def test_ocr():
-    image_path = "tests/images/hello_world.png"
-    text = extract_text(image_path)
-    print(text)
-    image_path = "tests/images/python_function.png"
-    text = extract_text(image_path)
-    print(text)
+    images_dir = Path("tests/images")
+
+    for image_path in images_dir.iterdir():
+        if image_path.is_file():
+            print(f"\nTesting: {image_path.name}")
+            text = extract_text(str(image_path))
+            print(text)

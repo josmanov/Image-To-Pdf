@@ -23,9 +23,16 @@ GUI:
         [x] add seperate colors for file selection status
 
 OCR (TEXT FROM IMAGE EXTRACTOR):
-[] extract all text from image
+[x] extract all text from image
     [x] use ocr to test a simple text extraction from an image
         [x] store string extracted from image
         [x] print string into terminal
-    [] test with large amounts of texts within a single image
-    [] create a loop to test all files within the tests/images folder
+    [x] test with large amounts of texts within a single image
+    [x] create a loop to test all files within the tests/images folder
+
+PDF write module:
+[] create a pdf that contains selected image only
+    [x] take image path and add .pdf suffix into variable
+    [x] get image size
+    [x] create pdf canvas using size
+    [] save created pdf
