@@ -16,7 +16,6 @@ GUI:
             * search only with image extensions i.e .png, .jpg. etc
         [x] open file_explorer
         [x] print the image path added in a new gui window, for now 
-
         [x] filter search for only images
         [x] add "Image selected" status on gui upon selecting image
         [x] make window start centered
@@ -31,7 +30,7 @@ OCR (TEXT FROM IMAGE EXTRACTOR):
     [x] create a loop to test all files within the tests/images folder
     [x] change ocr output from plain text to word boxes
     [x] get position data from detected words
-    [] test and print position data from detected words
+    [x] test and print position data from detected words
 
 PDF write module:
 [x] create a pdf that contains selected image only
@@ -41,3 +40,9 @@ PDF write module:
     [x] place image onto pdf add a second page 
     [x] save created pdf
     [x] test image to see resemblance of image and pdf file
+
+IMAGE TO PDF:
+[] add new textbox onto pdf using textbox data
+    [x] convert image pixel coords into pdf coords
+    [x] estimate font size from text box height
+    [] draw prepared wordboxes on top of image layer
