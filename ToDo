@@ -1,8 +1,8 @@
 
 [x] refactor code into cleaner structure
-[] create a file to store constants and variables in for easier configuration and expansion
+[x] create a file to store constants and variables in for easier configuration and expansion
     [x] create constants and status files
-    [] update gui.py with new variables from constants..py & status.py files
+    [x] update gui.py with new variables from constants..py & status.py files
 
 
 [x] create a gui that searches for images upon button press
@@ -19,6 +19,7 @@
         [x] filter search for only images
         [x] add "Image selected" status on gui upon selecting image
         [] make window start centered
+        [x] add seperate colors for file selection status
 
 [] extract all text from image
     [] use ocr to test a simple text extraction from an image
