@@ -8,7 +8,9 @@ def prepare_word_boxes(image_path: str, words: list[dict],
     with Image.open(image_path) as img:
         img_h = img.size[1]
 
-    descenders = set("gjpqy,.;:")
+    descenders = set("gjpqy,;:")
+    avg_height = sum(w["height"] for w in words) / len(words) if words else 1
+    font_size = max(1, int(avg_height * font_scale))
     out = []
 
     for w in words:
@@ -21,12 +23,8 @@ def prepare_word_boxes(image_path: str, words: list[dict],
         pdf_x = x
         pdf_y = img_h - (y + height)
 
-        all_heights = [item["height"] for item in words]
-        avg_height = sum(all_heights) / len(all_heights) if all_heights else 1
-        font_size = max(1, int(avg_height * font_scale))
-
-        letters = [ch for ch in text.lower() if ch.isalpha()]
-        has_descenders = any(ch in descenders for ch in letters)
+        chars = [ch for ch in text.lower() if ch.isalpha() or ch in descenders]
+        has_descenders = any(ch in descenders for ch in chars)
 
         if has_descenders:
             box_height = int(height * 0.75)
