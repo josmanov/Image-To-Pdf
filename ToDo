@@ -50,7 +50,8 @@ IMAGE TO PDF:
     [x] use clear high resolution image for better testing
     [x] check examples of different sizes and bluriness of text to check resemblance
     [x] draw white filled box within the red text outline
-    [] use image path selected from gui
+    [x] use image path selected from gui
+    [] add confirmation status that pdf has been generated
 
     Debug:
     [x] fix dramatic difference in font size

@@ -5,6 +5,8 @@ from pathlib import Path
 import constants as consts
 from status import Status, ErrorStatus
 
+from ocr import extract_text_data
+from pdf_writer import image_to_pdf
 
 def run_app():
     window = tk.Tk()
@@ -41,6 +43,8 @@ def run_app():
         status.set(Status.IMAGE_SELECTED.value)
         text_status.config(fg="green")
         print(image_path)
+        words = extract_text_data(image_path)
+        image_to_pdf(image_path, words, None, False)
 
     text_welcome = tk.Label(window, text=consts.TEXT_WELCOME, font=("Arial", 16))
     text_help = tk.Label(window, text=consts.TEXT_HELP, font=("Arial", 10))
