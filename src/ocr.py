@@ -1,5 +1,15 @@
 from PIL import Image
 import pytesseract
+import sys
+import os
+
+
+if getattr(sys, 'frozen', False):
+    base_path = os.path.dirname(sys.executable)
+else:
+    base_path = os.path.dirname(os.path.abspath(__file__))
+
+pytesseract.pytesseract.tesseract_cmd = os.path.join(base_path, "tesseract", "tesseract.exe")
 
 def extract_text_data(image_path: str) -> str:
     image = Image.open(image_path)
