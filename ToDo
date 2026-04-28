@@ -49,8 +49,9 @@ IMAGE TO PDF:
     [x] test new image and text drawing
     [x] use clear high resolution image for better testing
     [x] check examples of different sizes and bluriness of text to check resemblance
-    [] draw white filled box within the red text outline
-    
+    [x] draw white filled box within the red text outline
+    [] use image path selected from gui
+
     Debug:
     [x] fix dramatic difference in font size
     [x] fix inconsistent box sizes
@@ -61,3 +62,5 @@ IMAGE TO PDF:
         [x] make font reach end of box
         [x] fix acender letters causing wrong font size
     [x] add debug mode for enabling text redbox outline
+
+[] Package into an installer for production

@@ -46,7 +46,7 @@ def prepare_word_boxes(image_path: str, words: list[dict],
     return out
     
 
-def draw_words(pdf: canvas.Canvas, processed_words: list[dict], show_boxes: bool = True) -> None:
+def draw_words(pdf: canvas.Canvas, processed_words: list[dict], debug_text_outline: bool = True) -> None:
     from reportlab.pdfbase.pdfmetrics import getFont
 
     for p in processed_words:
@@ -66,9 +66,14 @@ def draw_words(pdf: canvas.Canvas, processed_words: list[dict], show_boxes: bool
         else:
             char_space = 0
 
-        if show_boxes:
+        if debug_text_outline:
+            pdf.setStrokeColorRGB(1, 1, 1)
             pdf.setStrokeColorRGB(1, 0, 0)
             pdf.rect(p["pdf_x"], p["pdf_y"], p["width"], p["height"], stroke=1, fill=0)
+        else:
+            pdf.setFillColorRGB(1, 1, 1)
+            pdf.setStrokeColorRGB(1, 1, 1)
+            pdf.rect(p["pdf_x"], p["pdf_y"], p["width"], p["height"], stroke=0, fill=1)
 
         t = pdf.beginText(p["pdf_x"], p["pdf_y"])
         t.setFont(font_name, font_size)
