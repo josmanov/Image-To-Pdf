@@ -1,16 +1,23 @@
 import tkinter as tk
 from tkinter.filedialog import askopenfilename
 from pathlib import Path
+import sys
+import os
 
 import constants as consts
 from status import Status, ErrorStatus
-
 from ocr import extract_text_data
 from pdf_writer import image_to_pdf
+
+if getattr(sys, 'frozen', False):
+    base_path = os.path.dirname(sys.executable)
+else:
+    base_path = os.path.dirname(os.path.abspath(__file__))
 
 def run_app():
     window = tk.Tk()
     window.title(consts.APP_TITLE)
+    window.iconbitmap(os.path.join(base_path, "icon.ico"))
 
     screen_w = window.winfo_screenwidth()
     screen_h = window.winfo_screenheight()

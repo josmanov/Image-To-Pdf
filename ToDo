@@ -68,7 +68,7 @@ IMAGE TO PDF:
     [] fix copied text having unnecessary gaps between characters
 
 
-[] Package into an installer for production
+[x] Package into an installer for production
     [x] fix .exe wont launch in .explorer, launches only from terminal
     [x] create proper readme for description and usage 
-    [] icon not showing for program
+    [x] icon not showing for program
