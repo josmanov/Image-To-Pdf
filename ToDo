@@ -51,6 +51,8 @@ IMAGE TO PDF:
     [x] fix dramatic difference in font size
     [] fix inconsistent box sizes
         [x] filter bottom box line to not end at descendant letters
-        [] fix texts without descendant letter unncessary bottom line uprise
+        [x] fix texts without descendant letter unncessary bottom line uprise
+        [] fix descending symbols not being detected as descending
+    [] fix font not ending evenly at the end of red box
     [] check examples of different sizes and bluriness of text to check resemblance
     

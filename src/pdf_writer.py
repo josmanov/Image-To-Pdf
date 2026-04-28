@@ -8,27 +8,27 @@ def prepare_word_boxes(image_path: str, words: list[dict],
     with Image.open(image_path) as img:
         img_h = img.size[1]
 
-    descenders = set("gjpgy")
+    descenders = set("gjpqy,.;:")
     out = []
 
     for w in words:
         if w.get("confidence", 0) < min_conf:
             continue
 
-        text =  w["text"]
+        text = w["text"]
         x, y, width, height = w["x"], w["y"], w["width"], w["height"]
 
         pdf_x = x
         pdf_y = img_h - (y + height)
 
-        all_heights = [w["height"] for w in words]
+        all_heights = [item["height"] for item in words]
         avg_height = sum(all_heights) / len(all_heights) if all_heights else 1
         font_size = max(1, int(avg_height * font_scale))
 
-        letters = [ch for ch in text.lower()if ch.isalpha()]
-        has_normal_letters = any(ch not in descenders for ch in letters)
-        
-        if has_normal_letters:
+        letters = [ch for ch in text.lower() if ch.isalpha()]
+        has_descenders = any(ch in descenders for ch in letters)
+
+        if has_descenders:
             box_height = int(height * 0.75)
             box_y = pdf_y + (height - box_height)
         else:
@@ -40,10 +40,11 @@ def prepare_word_boxes(image_path: str, words: list[dict],
             "pdf_x": pdf_x,
             "pdf_y": box_y,
             "width": width,
-            "height": height,
+            "height": box_height,
             "font_size": font_size,
             "confidence": w.get("confidence", 0),
         })
+
     return out
     
 
