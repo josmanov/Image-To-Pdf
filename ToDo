@@ -48,13 +48,15 @@ IMAGE TO PDF:
     [x] draw prepared wordboxes on top of image layer
     [x] test new image and text drawing
     [x] use clear high resolution image for better testing
+    [] check examples of different sizes and bluriness of text to check resemblance
+    
+    Debug:
     [x] fix dramatic difference in font size
-    [] fix inconsistent box sizes
+    [x] fix inconsistent box sizes
         [x] filter bottom box line to not end at descendant letters
         [x] fix texts without descendant letter unncessary bottom line uprise
         [x] fix descending symbols not being detected as descending
     [x] fix font not ending evenly at the end of red box
         [x] make font reach end of box
-        [] fix font size inconsistency
-    [] check examples of different sizes and bluriness of text to check resemblance
-    
+        [x] fix acender letters causing wrong font size
+    [] add debug mode for enabling text redbox outline

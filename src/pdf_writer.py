@@ -47,18 +47,35 @@ def prepare_word_boxes(image_path: str, words: list[dict],
     
 
 def draw_words(pdf: canvas.Canvas, processed_words: list[dict]) -> None:
+    from reportlab.pdfbase.pdfmetrics import getFont
+
     for p in processed_words:
         font_name = "Helvetica"
         font_size = p["font_size"]
+        text = p["text"]
 
-        text_width = pdf.stringWidth(p["text"], font_name, font_size)
-        if text_width > 0:
-            font_size = font_size * (p["width"] / text_width)
-        pdf.setFont(font_name, font_size)
+        face = getFont(font_name).face
+        ascent = face.ascent / 1000.0
+        actual_text_height = font_size * ascent
+        if actual_text_height > p["height"]:
+            font_size = font_size * (p["height"] / actual_text_height)
+
+        text_width = pdf.stringWidth(text, font_name, font_size)
+        if len(text) > 1 and text_width > 0:
+            char_space = (p["width"] - text_width) / (len(text) - 1)
+        else:
+            char_space = 0
+
         pdf.setStrokeColorRGB(1, 0, 0)
         pdf.rect(p["pdf_x"], p["pdf_y"], p["width"], p["height"], stroke=1, fill=0)
-        pdf.setFillColorRGB(0, 0, 0)
-        pdf.drawString(p["pdf_x"], p["pdf_y"], p["text"])
+
+        t = pdf.beginText(p["pdf_x"], p["pdf_y"])
+        t.setFont(font_name, font_size)
+        t.setFillColorRGB(0, 0, 0)
+        t.setCharSpace(char_space)
+        t.textOut(text)
+        pdf.drawText(t)
+
         pdf.setFillColorRGB(0, 0, 0)
         pdf.setStrokeColorRGB(0, 0, 0)
 
