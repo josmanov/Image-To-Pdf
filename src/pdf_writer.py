@@ -48,7 +48,13 @@ def prepare_word_boxes(image_path: str, words: list[dict],
 
 def draw_words(pdf: canvas.Canvas, processed_words: list[dict]) -> None:
     for p in processed_words:
-        pdf.setFont("Helvetica", p["font_size"])
+        font_name = "Helvetica"
+        font_size = p["font_size"]
+
+        text_width = pdf.stringWidth(p["text"], font_name, font_size)
+        if text_width > 0:
+            font_size = font_size * (p["width"] / text_width)
+        pdf.setFont(font_name, font_size)
         pdf.setStrokeColorRGB(1, 0, 0)
         pdf.rect(p["pdf_x"], p["pdf_y"], p["width"], p["height"], stroke=1, fill=0)
         pdf.setFillColorRGB(0, 0, 0)

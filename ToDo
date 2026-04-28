@@ -53,6 +53,8 @@ IMAGE TO PDF:
         [x] filter bottom box line to not end at descendant letters
         [x] fix texts without descendant letter unncessary bottom line uprise
         [x] fix descending symbols not being detected as descending
-    [] fix font not ending evenly at the end of red box
+    [x] fix font not ending evenly at the end of red box
+        [x] make font reach end of box
+        [] fix font size inconsistency
     [] check examples of different sizes and bluriness of text to check resemblance
     
