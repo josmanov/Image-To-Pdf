@@ -46,7 +46,7 @@ def prepare_word_boxes(image_path: str, words: list[dict],
     return out
     
 
-def draw_words(pdf: canvas.Canvas, processed_words: list[dict]) -> None:
+def draw_words(pdf: canvas.Canvas, processed_words: list[dict], show_boxes: bool = True) -> None:
     from reportlab.pdfbase.pdfmetrics import getFont
 
     for p in processed_words:
@@ -66,8 +66,9 @@ def draw_words(pdf: canvas.Canvas, processed_words: list[dict]) -> None:
         else:
             char_space = 0
 
-        pdf.setStrokeColorRGB(1, 0, 0)
-        pdf.rect(p["pdf_x"], p["pdf_y"], p["width"], p["height"], stroke=1, fill=0)
+        if show_boxes:
+            pdf.setStrokeColorRGB(1, 0, 0)
+            pdf.rect(p["pdf_x"], p["pdf_y"], p["width"], p["height"], stroke=1, fill=0)
 
         t = pdf.beginText(p["pdf_x"], p["pdf_y"])
         t.setFont(font_name, font_size)
@@ -79,7 +80,7 @@ def draw_words(pdf: canvas.Canvas, processed_words: list[dict]) -> None:
         pdf.setFillColorRGB(0, 0, 0)
         pdf.setStrokeColorRGB(0, 0, 0)
 
-def image_to_pdf(image_path: str, words: list[dict] | None = None, output_path: str | None = None) -> str:
+def image_to_pdf(image_path: str, words: list[dict] | None = None, output_path: str | None = None, show_boxes: bool = True) -> str:
     image_file = Path(image_path)
 
     if not image_file.exists():
@@ -104,7 +105,7 @@ def image_to_pdf(image_path: str, words: list[dict] | None = None, output_path: 
     )
     if words:
         processed = prepare_word_boxes(image_path, words)
-        draw_words(pdf, processed)
+        draw_words(pdf, processed, show_boxes)
 
     pdf.showPage()
     pdf.save()

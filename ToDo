@@ -42,13 +42,14 @@ PDF write module:
     [x] test image to see resemblance of image and pdf file
 
 IMAGE TO PDF:
-[] add new textbox onto pdf using textbox data
+[x] add new textbox onto pdf using textbox data
     [x] convert image pixel coords into pdf coords
     [x] estimate font size from text box height
     [x] draw prepared wordboxes on top of image layer
     [x] test new image and text drawing
     [x] use clear high resolution image for better testing
-    [] check examples of different sizes and bluriness of text to check resemblance
+    [x] check examples of different sizes and bluriness of text to check resemblance
+    [] draw white filled box within the red text outline
     
     Debug:
     [x] fix dramatic difference in font size
@@ -59,4 +60,4 @@ IMAGE TO PDF:
     [x] fix font not ending evenly at the end of red box
         [x] make font reach end of box
         [x] fix acender letters causing wrong font size
-    [] add debug mode for enabling text redbox outline
+    [x] add debug mode for enabling text redbox outline
