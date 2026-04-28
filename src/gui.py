@@ -42,9 +42,15 @@ def run_app():
         selected_path.set(image_path)
         status.set(Status.IMAGE_SELECTED.value)
         text_status.config(fg="green")
-        print(image_path)
-        words = extract_text_data(image_path)
-        image_to_pdf(image_path, words, None, False)
+
+        try:
+            words = extract_text_data(image_path)
+            image_to_pdf(image_path, words, None, False)
+            status.set("PDF has been created")
+            text_status.config(fg="green")
+        except Exception:
+            status.set("PDF creation failed")
+            text_status.config(fg="red")
 
     text_welcome = tk.Label(window, text=consts.TEXT_WELCOME, font=("Arial", 16))
     text_help = tk.Label(window, text=consts.TEXT_HELP, font=("Arial", 10))

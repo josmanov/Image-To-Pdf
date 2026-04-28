@@ -20,6 +20,8 @@ GUI:
         [x] add "Image selected" status on gui upon selecting image
         [x] make window start centered
         [x] add seperate colors for file selection status
+    [x] add confirmation status that pdf has been generated
+
 
 OCR (TEXT FROM IMAGE EXTRACTOR):
 [x] extract all text from image
@@ -51,7 +53,7 @@ IMAGE TO PDF:
     [x] check examples of different sizes and bluriness of text to check resemblance
     [x] draw white filled box within the red text outline
     [x] use image path selected from gui
-    [] add confirmation status that pdf has been generated
+    [x] make text appear invisible when not in debug mode
 
     Debug:
     [x] fix dramatic difference in font size
@@ -63,5 +65,7 @@ IMAGE TO PDF:
         [x] make font reach end of box
         [x] fix acender letters causing wrong font size
     [x] add debug mode for enabling text redbox outline
+    [] fix copied text having unnecessary gaps between characters
+
 
 [] Package into an installer for production
