@@ -8,13 +8,12 @@ You can open the PDF, search it, copy words from it, and share it like any other
 If you just want to try it, grab the latest release and open the `ImageToPDF.exe` inside the provided folder. <br>
 The app is built as a folder-based Windows release, so the `.exe` should be run from inside that folder, not copied out by itself.
 
-## What It Does
+## How to run
 
-1. Open the app.
-2. Choose an image.
-3. ImageToPDF creates a PDF in the same folder as the image.
-
-The output PDF keeps the image visually intact, while adding hidden searchable text underneath.
+1. Download and unzip 'ImagetoPDF-v1.0.zip'
+2. Run the ImagetoPDF.exe.
+3. Choose an image.
+4. ImageToPDF will create the PDF in the same folder as the selected image.
 
 ## Why it's useful
 
