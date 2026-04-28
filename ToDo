@@ -48,6 +48,9 @@ IMAGE TO PDF:
     [x] draw prepared wordboxes on top of image layer
     [x] test new image and text drawing
     [x] use clear high resolution image for better testing
-    [] check examples of different sizes and bluriness to view resemblence
-    [x] fix incorrect font sizing
-    [] fix inconsistent box sizes. 
+    [x] fix dramatic difference in font size
+    [] fix inconsistent box sizes
+        [x] filter bottom box line to not end at descendant letters
+        [] fix texts without descendant letter unncessary bottom line uprise
+    [] check examples of different sizes and bluriness of text to check resemblance
+    
